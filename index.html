@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Qr Genarator</title>
+	<link rel="shortcut icon" href="fav_icon.png" type="image/x-icon">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/qrcode.js"></script>
+	<script src="js/md5.js"></script>
+	<script src="js/custom.js"></script>
+</head>
+
+<style>
+	#umrandung {
+		--tw-bg-opacity: 1;
+		background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+		height: 215px;
+		width: 215px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.4/tailwind.min.css">
+
+<body onload="init()" class="grid justify-items-center bg-gray-900 text-white">
+	<div>
+		<p class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 text-8xl mt-2" href="https://github.com/tayron1/Node-Mail-Spammer">
+			QR-Code Generator
+		</p>
+
+			<br>
+			<tr>
+				<td>First name</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" type="text" id="vorname" name="vorname" placeholder="Luna"></td><br><br>
+			</tr>
+
+			<tr>
+				<td>Last name</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" type="text" id="nachname" name="nachname" placeholder="Someones"></td><br><br>
+			</tr>
+
+			<tr>
+				<td>Email</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" type="text" id="email" name="email" placeholder="spam@lunana.xyz"></td><br><br>
+			</tr>
+
+			<tr>
+				<td>Phone</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" id="telefon" type="text" name="telephonenummer" placeholder="+352 43 031"></td><br><br>
+			</tr>
+
+			<tr>
+				<td>Mobile</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" id="mobil" type="text" name="mobil" placeholder="+352 43 031"></td><br><br>
+			</tr>
+
+			<tr>
+				<td>Occupation</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" type="text" id="firma" name="firma" placeholder="Discord"></td><br><br>
+			</tr>
+
+			<tr>
+				<td>Street</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" type="text" id="strasse" name="addresse" placeholder="Boulevard Konrad Adenauer"></td><br><br>
+			</tr>
+
+			<tr>
+				<td>Post lead number</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" type="text" id="plz" name="addresse" placeholder="2925"></td><br><br>
+			</tr>
+
+			<tr>
+				<td>Location</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" type="text" id="ort" name="addresse" placeholder="Luxemburg"></td><br><br>
+			</tr>
+
+			<tr>
+				<td>Website</td><br>
+				<td><input class="bg-gray-700 focus:bg-gray-600 rounded-md p-2" size="100" type="text" id="website" name="website" placeholder="https://lunana.xyz"></td><br><br>
+			</tr>
+
+	</div>
+	<br>
+	<div>
+		<input class="bg-red-500 bg-opacity-100 text-2xl hover:bg-red-400 rounded-lg p-2" type="button" name="generate" value="Geberate" onclick="generateQR()" />
+		<input class="bg-red-500 bg-opacity-100 text-2xl hover:bg-red-400 rounded-lg p-2" type="button" name="generate" value="Download" onclick="downloadQR1()" />
+	</div>
+	<br>
+		<tr>
+			<td>
+				<div id="umrandung">
+					<div id="svg">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200"
+							height="200">
+							<g id="qrcode" />
+						</svg>
+					</div>
+				</div>
+			</td>
+		</tr>
+	<br>
+
+</body>
+
+</html>
